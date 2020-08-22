@@ -26,7 +26,7 @@ STATIC_URL = '/static/'
 SECRET_KEY = '_klmc3yl3#8q^kzj-ugosjr$_e8qvasogg+^ajrj7y6zrnmctf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['avimimus.herokuapp.com','127.0.0.1']
 
