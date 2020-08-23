@@ -52,28 +52,31 @@
             }
         </style>
     </head>
-
-
-<div class="center-column">
-    <div class="container">
-        <h3>To-Do List<h3>
-    </div>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.title}}
-        <input type="submit" name="Create Task"class="btn btn-info">
-    </form>
-    <div class="todo-list">
-        {% for task in tasks %}
-            <div class="item-row">
-                <a href="{% url 'update_task' task.id %}" class="btn btn-sm btn-info">Update</a>
-                <a href="{% url 'delete' task.id %}" class="btn btn-sm btn-danger">Delete</a>
-
-                {% if task.complete == True %}
-                <strike>{{task}}</strike>
-                {%endif%}
-                <p>{{task}}</p>
+    <body>
+        <div class="center-column">
+            <div class="container">
+                <h3>To-Do List<h3>
             </div>
-        {% endfor %}
-    </div>
-</div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.title}}
+            <input type="submit" name="Create Task"class="btn btn-info">
+        </form>
+        <div class="todo-list">
+         {% for task in tasks %}
+                <div class="item-row">
+                    <a href="{% url 'update_task' task.id %}" class="btn btn-sm btn-info">Update</a>
+                    <a href="{% url 'delete' task.id %}" class="btn btn-sm btn-danger">Delete</a>
+
+                    {% if task.complete == True %}
+                    <strike>{{task}}</strike>
+                    {%endif%}
+                    <p>{{task}}</p>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+
+    </body>
+</html>
+
